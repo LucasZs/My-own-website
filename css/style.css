@@ -1,0 +1,70 @@
+body {
+	font-family: courier;
+	font-weight: bold;
+	font-size: 1.2em;
+	background-image:url("../paper.jpg");
+}
+
+span {
+	color: #FF0000;
+	font-size: 1.7em;
+	text-decoration: underline;
+	text-decoration-style: wavy;
+	text-transform: uppercase; 
+	letter-spacing: 5px;
+}
+
+#kontener {
+	margin: 0 auto;
+	width: 100%;
+}
+
+header {
+	background-color: none;
+	padding: 10px;
+}
+
+nav {
+	float: left;
+	width: 100%;
+	background-color: #0c0c0c;
+	list-style-type: none;
+	display: inline;
+}
+
+
+nav a {
+	display: block;
+	text-decoration: none;
+	border right: 2px solid #FFFFFF;
+	padding: 3px 10px;
+	float: left;
+	color: #FFFFFF;
+}
+
+nav a:hover {
+	background-color: #CCCCCC;
+}
+
+#foKontener {
+	float: left;
+	width: 100%;
+}
+
+.content {
+	clear: left;
+	float: left;
+	width: 65%;
+	padding: 20px 0;
+	margin: 0 0 0 5%;
+	display: inline;
+}
+
+footer {
+	clear: left;
+	background-color: none;
+	text-align: center;
+	padding: 20px;
+	height: 1%;
+}
+
