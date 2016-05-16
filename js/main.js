@@ -52,4 +52,3 @@ function sendMessage()
 	
 	alert(name.value+" "+email.value+" "+message.value+" Üzeneted elküldve!");
 }
-document.getElementById("submit_button").disabled = true;
