@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Zsóri Lukács Péter weboldala</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<script language="JavaScript" type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 <div id="kontener">
@@ -19,27 +19,27 @@
 	</header>
 	<div id="foKontener">
 		<div class="content">
-		<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+		<form id="contact_form" action="." method="POST" enctype="multipart/form-data">
 			<div class="row">
 				<label for="name">Neved:</label><br />
-				<input id="name" class="input" name="name" type="text" value="" size="30" placeholder="Írd be a neved!"/>
+				<input id="name" class="input" name="name" type="text" value="" size="30" placeholder="Írd be a neved!" onchange="validContactName()"/>
 				<br />
 				<br />
 			</div>
 			<div class="row">
 				<label for="email">Email címed:</label>
 				<br />
-				<input id="email" class="input" name="email" type="text" value="" size="30" placeholder="Add meg az email címed!"/><br />
+				<input id="email" class="input" name="email" type="text" value="" size="30" placeholder="Add meg az email címed!" onchange="validContactEmail()"/><br />
 				<br />
 			</div>
 			<div class="row">
 				<label for="message">Üzeneted:</label>
 				<br />
-				<textarea id="message" class="input" name="message" rows="7" cols="30" placeholder="Írd ide az üzeneted!"></textarea>
+				<textarea id="message" class="input" name="message" rows="7" cols="30" placeholder="Írd ide az üzeneted!" onchange="validContactMessage()"></textarea>
 				<br />
 			</div>
 			<br />
-			<input id="submit_button" type="submit" value="Küldés" />
+			<input id="submit_button" type="submit" value="Küldés" onclick="sendMessage()"/>
 		</form>	
 		</div>
 		<footer>
