@@ -3,14 +3,19 @@
 	app.validContactEmail = validContactEmail;
 	app.validContactMessage = validContactMessage;
 	app.sendMessage = sendMessage;
+	app.contactData = {
+		name: '',
+		email: '',
+		message: ''
+	};
 	
 	
 	var validity = {
 		name: false,
 		email: false,
 		message: false
-	}
-
+	};
+	
 	window.addEventListener('load', init);
 
 	function init(){
@@ -19,6 +24,7 @@
 
 	function validContactName() {
 		var name = document.getElementById('name');
+		app.contactData.name = name.value;
 		var nameLength = name.value.length;
 		
 		if(!((nameLength>3)&&(nameLength<=30)&&(name.value.indexOf(" ")!=-1)))
@@ -37,6 +43,7 @@
 
 	function validContactEmail() {
 		var email = document.getElementById('email');
+		app.contactData.email = email.value;
 		var lastThreeCharactersOfEmail = email.value.substr(email.value.length - 3);
 		var lastFourCharactersOfEmail = email.value.substr(email.value.length - 4);
 		
@@ -55,6 +62,7 @@
 
 	function validContactMessage() {
 		var message = document.getElementById('message');
+		app.contactData.message = message.value;
 		var messageLength = message.value.length;
 		
 		if(!((messageLength>20)&&(messageLength<=500)))
@@ -77,6 +85,6 @@
 		var email = document.getElementById('email');
 		var message = document.getElementById('message');
 		
-		alert(name.value+" "+email.value+" "+message.value+" Üzeneted elküldve!");
+		alert(app.contactData.name+" "+app.contactData.email+" "+app.contactData.message+" \nÜzeneted elküldve!");
 	}
 })(window.myApp = window.myApp || {});
