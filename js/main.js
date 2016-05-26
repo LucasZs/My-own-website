@@ -1,3 +1,15 @@
+var validity = {
+	name: false,
+	email: false,
+	message: false
+}
+
+window.addEventListener('load', init);
+
+function init(){
+	document.getElementById("submit_button").disabled = true;
+}
+
 function validContactName() {
 	var name = document.getElementById('name');
 	var nameLength = name.value.length;
@@ -6,11 +18,14 @@ function validContactName() {
 	{
 		name.style.backgroundColor = "#FF0000";
 		document.getElementById("submit_button").disabled = true;
+		validity.name = false;
 	}
 	else
 	{
 		name.style.backgroundColor = "#FFFFFF";
+		validity.name = true;
 	}
+	document.getElementById("submit_button").disabled = !(validity.name && validity.email && validity.message);
 }
 
 function validContactEmail() {
@@ -21,12 +36,14 @@ function validContactEmail() {
 	if(!((lastThreeCharactersOfEmail==".hu")||(lastFourCharactersOfEmail==".com")))
 	{
 		email.style.backgroundColor = "#FF0000";
-		document.getElementById("submit_button").disabled = true;
+		validity.email = false;
 	}
 	else
 	{
 		email.style.backgroundColor = "#FFFFFF";
+		validity.email = true;
 	}
+	document.getElementById("submit_button").disabled = !(validity.name && validity.email && validity.message);
 }
 
 function validContactMessage() {
@@ -37,11 +54,14 @@ function validContactMessage() {
 	{
 		message.style.backgroundColor = "#FF0000";
 		document.getElementById("submit_button").disabled = true;
+		validity.message = false;
 	}
 	else
 	{
 		message.style.backgroundColor = "#FFFFFF";
+		validity.message = true;
 	}
+	document.getElementById("submit_button").disabled = !(validity.name && validity.email && validity.message);
 }
 
 function sendMessage()
